@@ -174,3 +174,34 @@ h1 {
     width: 100%;
     display: flex;flex-wrap: wrap;
 }
+
+input {
+    color: rgba(0, 0, 0, .87);
+    width: 100%;
+    max-width: 800px;
+    height: 60px;
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.input__wrap {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.search__wrapper {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    padding: 10px 20px 0 18px;
+    color: black;
+    font-size: 32px;
+    transition: all .2s ease;
+
+}
