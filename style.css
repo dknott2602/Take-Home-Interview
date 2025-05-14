@@ -128,8 +128,8 @@ nav {
     padding: 10px 32px;
     margin-top: 2px;
     border-radius: 9999px;
-    background: #6415ff;
-    color: #fff;
+    background: #f3cf03;
+    color: #0c0b0b;
     line-height: 1.5;
     border: none;
     width: auto;
@@ -203,5 +203,18 @@ input {
     color: black;
     font-size: 32px;
     transition: all .2s ease;
+}
 
+.overlay {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
 }
