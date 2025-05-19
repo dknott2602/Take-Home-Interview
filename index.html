@@ -23,12 +23,14 @@
                 </div>
             </div>
         </nav>
-        <div class="content__wrapper">
-            <h1>Browse Our Movies</h1>
-            <div class="input__wrap">
-                <input type="text" placeholder="Search By Title or Keyword" id="">
-                <div class="search__wrapper">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="container">
+            <div class="content__wrapper">
+                <h1>Browse Our Movies</h1>
+                <div class="input__wrap">
+                    <input type="text" placeholder="Search By Title or Keyword" id="">
+                    <div class="search__wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -36,6 +38,45 @@
             <img src="/Assets/API Tutorial.png" alt="">
         </div>
     </section>
+    <main id="movies__main">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="movies__header">
+                        <h2 class="section__title movies__header--title">
+                            All <span class="yellow">Movies</span>
+                        </h2>
+                        <select id="filter" onchange="filterBooks(event)">
+                            <option value="" disabled selected>Sort</option>
+                            <option value="A_Z">A-Z</option>
+                            <option value="Z_A">Z-A</option>
+                            <option value="YEAR">Year</option>
+                        </select>
+                    </div>
+                    <div class="movies">
+                        <i class="fas fa-spinner movies__loading--spinner"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row row__column">
+                <a href="#">
+                    <figure class="footer__logo">
+                        <img src="./Assets/IMBD.jpg" class="footer__logo--img" alt="">
+                    </figure>
+                </a>
+                <div class="footer__list">
+                    <a href="#" class="footer__link">Home</a>
+                    <a href="#features" class="footer__link">Movies</a>
+                    <a class="footer__link no-cursor">Contact</a>
+                </div>
+                <div class="footer__copyright">Copyright &copy; 2025 IMDb</div>
+            </div>
+        </div>
+    </footer>
     
 </body>
 <script src="index.js"></script>
