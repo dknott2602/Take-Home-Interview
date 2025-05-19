@@ -11,10 +11,10 @@ async function renderMovies(filter) {
     moviesWrapper.classList.remove('movies__loading')
 
     if (filter === 'A_Z') {
-        movies.sort((a, b));
+        data.Search.sort((a, b) => b.Year - a.Year);
     }
     else if (filter === 'Z_A') {
-        movies.sort((a, b));
+        data.Search.sort((a, b) => a.Year - b.Year);
     }
     else if (filter === 'YEAR') {
         movies.sort((a, b) => b.year - a.year);
@@ -24,7 +24,7 @@ async function renderMovies(filter) {
         `https://www.omdbapi.com/?apikey=8855abea&s=fast`
     );
     const data = await response.json();
-    console.log(data.search)
+    console.log(data.Search)
 
     const indexHtml = data.Search.map((movies) => {
     return `<div class="movie">
