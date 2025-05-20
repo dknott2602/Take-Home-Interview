@@ -5,11 +5,15 @@ let movies;
 async function renderMovies(filter) {
     const moviesWrapper = document.querySelector('.movies')
 
-    moviesWrapper.classList += ' movies__loading'
+    const response = await fetch(
+        `https://www.omdbapi.com/?apikey=8855abea&s=fast`
+    );
+
+    const data = await response.json();
 
     
-    moviesWrapper.classList.remove('movies__loading')
-
+    let movies = []
+    
     if (filter === 'A_Z') {
         data.Search.sort((a, b) => b.Year - a.Year);
     }
@@ -17,15 +21,10 @@ async function renderMovies(filter) {
         data.Search.sort((a, b) => a.Year - b.Year);
     }
     else if (filter === 'YEAR') {
-        movies.sort((a, b) => b.year - a.year);
+        movies.sort((a, b) => Number(b.Year) - Number(a.Year));
     }
-
-    const response = await fetch(
-        `https://www.omdbapi.com/?apikey=8855abea&s=fast`
-    );
-    const data = await response.json();
-    console.log(data.Search)
-
+    
+    
     const indexHtml = data.Search.map((movies) => {
     return `<div class="movie">
     <figure class="movie__img--wrapper">
@@ -39,16 +38,30 @@ async function renderMovies(filter) {
     </div>
     </div>`
         })
-        .join("");
-
+    .join("");
+        
     moviesWrapper.innerHTML = indexHtml    
 }
-
+    
 function filterMovies(event) {
     renderMovies(event.target.value);
     }
-
+    
 setTimeout (() => {
     renderMovies();
 });
+    
+
+moviesWrapper.classList += ' movies__loading'
+
+    
+    
+moviesWrapper.classList.remove('movies__loading')
+
+
+// console.log(data.Search)
+
+
+
+
 
